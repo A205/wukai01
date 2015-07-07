@@ -1,6 +1,5 @@
 package wukai1;
 
-import java.util.Random;
 
 public class Score {
 
@@ -31,17 +30,26 @@ public class Score {
 		}
 //求总分平均分
 		int[] studentTotalScore=new int[20];
-		int[] studentAverageScore=new int[20];
-		for(int i=0;i<20;i++){
-			for(int j=0;j<5;j++)
+		int[] stu=new int[5];
+		int[] studentAverageScore=new int[5];
+		for(int j=0;j<5;j++){
+			for(int i=0;i<20;i++)
 			{
 				studentTotalScore[i]=studentTotalScore[i]+a[i][j];
-				
 			}
-			studentAverageScore[i]=(int)(studentTotalScore[i]/5);
+		}
+		for(int i=0;i<5;i++){
+			for(int j=0;j<20;j++){
+				stu[i]=stu[i]+a[j][i];
+			}
+			studentAverageScore[i]=stu[i]/20;
+			
 		}
 		for(int i=0;i<20;i++){
-			System.out.println(" 学号  "+i+"  总分  "+studentTotalScore[i]+"  平均分  "+studentAverageScore[i]+"\n");
+			System.out.println(" 学号  "+i+"  总分  "+studentTotalScore[i]);
+		}
+		for(int j=0;j<5;j++){
+			System.out.println("  平均分  "+studentAverageScore[j]+"\n");
 		}
 	}
 
